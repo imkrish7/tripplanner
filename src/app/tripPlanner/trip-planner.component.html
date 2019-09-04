@@ -1,0 +1,5 @@
+<h1> Trip Planner </h1>
+<Button (click) = "showAddForm()" class="btn btn-primary"> Add </Button>
+<app-add-form  *ngIf="addForm" (addForm)="showAddForm()" (addData)="addTrip($event)"></app-add-form>
+<app-edit-form *ngIf="editForm" (showEditForm)="showEditForm($event)" [editIndex]="editIndex" [editrip]="editrip"></app-edit-form>
+<app-trip-list [journeyList]="journeys" (deleteData)="deleteTrip($event)" (editData)="showEdit($event)"></app-trip-list>

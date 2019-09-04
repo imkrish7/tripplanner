@@ -1,0 +1,30 @@
+<form ngSubmit="onSubmit()" #addForm="ngForm">
+  <div class="form-group">
+    <input required type="text" [(ngModel)]="editrip.from" [value]="from" name="from" #from="ngModel" class="form-control"
+      placeholder="Enter Source ..." />
+    <div [hidden]="from.valid || from.pristine" class="alert alert-danger">
+      Source is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" required [(ngModel)]="editrip.to" #to="ngModel" name="to" class="form-control"
+      placeholder="Enter destination ..." />
+    <div [hidden]="to.valid || to.pristine" class="alert alert-danger">
+      Destination is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="date" required [(ngModel)]='editrip.startDate' #startDate="ngModel" class="form-control"
+      name="startDate" />
+    <div [hidden]="startDate.valid || startDate.pristine" class="alert alert-danger">
+      Stard Date is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="date" required [(ngModel)]="editrip.endDate" #endDate="ngModel" class="form-control" name="endDate" />
+    <div [hidden]="endDate.valid || endDate.pristine" class="alert alert-danger">
+      End Date is required
+    </div>
+  </div>
+  <button (click)="editForm()" class="btn btn-primary" >Edit</button>
+</form>
